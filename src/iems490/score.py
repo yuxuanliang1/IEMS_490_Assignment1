@@ -12,7 +12,7 @@ def _last_hash_line(text: str) -> Optional[str]:
 
 def extract_final_number(text: str) -> Optional[str]:
     """
-    从模型输出中抓取最后一行以 #### 开头的数字串，返回原始字符串（不四舍五入）。
+    Extract the number string starting with '####' from the last line of the model's output. Returns the raw string (no rounding).
     """
     ln = _last_hash_line(text)
     if ln is None:
@@ -22,7 +22,7 @@ def extract_final_number(text: str) -> Optional[str]:
 
 def extract_gold_number(answer_field: str) -> Optional[str]:
     """
-    从 GSM8K 官方答案字段中抓取最后一行 '#### <number>' 的数字串。
+    Extract the number string from the last line, which is '#### <number>', within the official GSM8K answer field.
     """
     ln = _last_hash_line(answer_field)
     if ln is None:
@@ -32,7 +32,7 @@ def extract_gold_number(answer_field: str) -> Optional[str]:
 
 def numerically_equal(a: str, b: str, tol: float = 1e-9) -> bool:
     """
-    数值相等判断：能转 float 的按误差 tol 比较；否则回退到字符串完全相等。
+    Equality check: If convertible to a float, compare the numbers using the tolerance 'tol'; otherwise, fall back to exact string comparison.
     """
     try:
         fa, fb = float(a), float(b)
