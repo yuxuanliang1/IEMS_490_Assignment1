@@ -1,4 +1,4 @@
-﻿# src/iems490/dataset.py
+# src/iems490/dataset.py
 from typing import List, Dict
 import random
 from .config import RANDOM_SEED, N_SAMPLES

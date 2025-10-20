@@ -1,18 +1,11 @@
-"""
-Prompt templates used by the solver. These defaults are lightweight and
-designed to work with either a real LLM provider or the offline stub in
-`solve_one`.
-"""
-
-# System instruction for math-style tasks (e.g., GSM8K-like problems).
-BASE_SYSTEM: str = (
-    "You are a careful math assistant. Reason step by step and show brief "
-    "work. On the final line, output only the answer prefixed by '####'."
+BASE_SYSTEM = (
+    "You are a precise grade-school math solver. "
+    "Solve carefully and give only one final numeric answer."
 )
-
-# A simple user template. Format with: user = BASE_USER_TEMPLATE.format(question=...)
-BASE_USER_TEMPLATE: str = (
-    "Question:\n{question}\n\nShow your reasoning, then finish with a line '#### <final>'"
+BASE_USER_TEMPLATE = (
+    "Problem:\n{question}\n\n"
+    "Rules:\n"
+    "1) Do any scratch work invisibly.\n"
+    "2) Output the FINAL numeric answer at the very end with the prefix '#### '.\n"
+    "Example format: #### 123\n"
 )
-
-__all__ = ["BASE_SYSTEM", "BASE_USER_TEMPLATE"]
