@@ -4,7 +4,7 @@
 PROVIDER = os.getenv("PROVIDER", os.getenv("IEMS490_PROVIDER", "offline")).lower()
 
 # DeepSeek
-DEEPSEEK_API_KEY  = os.getenv("DEEPSEEK_API_KEY", "sk-fc8885c18ad741e689435bd7938dae78")
+DEEPSEEK_API_KEY  = os.getenv("DEEPSEEK_API_KEY", "")
 DEEPSEEK_BASE_URL = os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
 DEEPSEEK_MODEL    = os.getenv("DEEPSEEK_MODEL", "deepseek-chat")
 
